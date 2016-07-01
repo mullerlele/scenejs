@@ -1003,7 +1003,7 @@ SceneJS_Display.prototype._logPickList = function () {
 
     function getLocalRay(canvas, object, canvasCoords, origin, dir) {
 
-        var modelMat = object.modelTransform.matrix;
+        var modelMat = object.modelTransform.mat;
         var viewMat = object.viewTransform.matrix;
         var projMat = object.projTransform.matrix;
 
@@ -1260,7 +1260,7 @@ SceneJS_Display.prototype._logPickList = function () {
 
                 // Get World-space cartesian coordinates of the ray-triangle intersection
 
-                SceneJS_math_transformVector4(object.modelTransform.matrix, tempVec4, tempVec4b);
+                SceneJS_math_transformVector4(object.modelTransform.mat, tempVec4, tempVec4b);
 
                 hit.worldPos = SceneJS._sliceArray(tempVec4b, 0, 3);
 
